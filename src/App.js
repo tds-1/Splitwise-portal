@@ -9,6 +9,7 @@ import UserInfo from "./components/UserInfo";
 import SetToken from "./components/SetToken";
 import config from "./config";
 import withAuth from './withAuth';
+import CSVUpload from './components/CSVUpload'
 
 
 function LoginPage() {
@@ -29,6 +30,7 @@ function LoginPage() {
 const Login = withAuth(LoginPage,  false);
 const ProtectedUserInfo = withAuth(UserInfo, true);
 const SetAuthToken = withAuth(SetToken, false);
+const ProtectedCSVUpload = withAuth(CSVUpload, true);
 
 
 function App() {
@@ -45,6 +47,7 @@ function App() {
             path="/user_info"
             element={<ProtectedUserInfo />}
           />
+          <Route path="/upload-csv" element={<ProtectedCSVUpload />} />
         </Routes>
       </div>
     </Router>

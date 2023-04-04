@@ -20,7 +20,6 @@ const SetToken = () => {
       try {
         const response = await api.get(config.userApiUrl);
         setUser(response.data.result);
-        console.log("start redirection");
         navigate('/user_info');
       } catch (error) {
         console.error('Error fetching user data:', error);

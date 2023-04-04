@@ -1,0 +1,84 @@
+.transactions-table {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center/14px;
+}
+
+select:focus {
+  outline: none;
+  border: 1px solid dodgerblue;
+  box-shadow: 0 0 3px dodgerblue;
+}
+
+button {
+  margin: 20px 0;
+  padding: 8px 16px;
+  background-color: dodgerblue;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0073e6;
+}
+
+button:active {
+  background-color: #0059b3;
+}
+
+.blocked-row {
+  cursor: not-allowed;
+  background-color: #f8f8f8;
+  opacity: 0.6;
+  pointer-events: none;
+}
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
