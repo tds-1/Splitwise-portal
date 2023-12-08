@@ -5,6 +5,7 @@ import config from "../config";
 import Select, { components } from "react-select";
 import Checkbox from "@mui/material/Checkbox";
 import TransactionsTable from "./TransactionsTable"
+import Header from './Header'; // Adjust the path based on your project structure
 
 const CheckboxOption = (props) => {
   return (
@@ -105,7 +106,10 @@ const CSVUpload = () => {
   }));
 
   return (
+    <>
+    <Header />
     <div>
+
     <form className="csv-upload-container" onSubmit={handleSubmit}>
       <h1 className="csv-upload-heading">CSV Upload</h1>
       <div className="csv-upload-input">
@@ -165,6 +169,7 @@ const CSVUpload = () => {
       />
       </div>
     </div>
+    </>
   );
 };
 

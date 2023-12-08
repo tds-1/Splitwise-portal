@@ -10,6 +10,7 @@ import SetToken from "./components/SetToken";
 import config from "./config";
 import withAuth from './withAuth';
 import CSVUpload from './components/CSVUpload'
+import SingleTransactionUpload from './components/SingleTransactionUpload'
 
 
 function LoginPage() {
@@ -31,6 +32,7 @@ const Login = withAuth(LoginPage,  false);
 const ProtectedUserInfo = withAuth(UserInfo, true);
 const SetAuthToken = withAuth(SetToken, false);
 const ProtectedCSVUpload = withAuth(CSVUpload, true);
+const ProtectedSingleTransactionUpload = withAuth(SingleTransactionUpload, true);
 
 
 function App() {
@@ -48,6 +50,7 @@ function App() {
             element={<ProtectedUserInfo />}
           />
           <Route path="/upload-csv" element={<ProtectedCSVUpload />} />
+          <Route path="/add-transaction" element={<ProtectedSingleTransactionUpload />} />
         </Routes>
       </div>
     </Router>

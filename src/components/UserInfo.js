@@ -54,6 +54,9 @@ const UserInfo = () => {
       <p>Registration Status: {user.registration_status}</p>
       <p>Default Currency: {user.default_currency}</p>
       <p>Locale: {user.locale}</p>
+      <Link to="/add-transaction">
+        <button>Add Single Transaction</button>
+      </Link>
       <Link to="/upload-csv">
         <button>Upload CSV</button>
       </Link>
