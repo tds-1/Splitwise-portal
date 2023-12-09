@@ -1,84 +1,102 @@
+/* Import a Google Font for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
 .transactions-table {
-  margin: 20px;
-  font-family: Arial, sans-serif;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 table {
-  border-collapse: collapse;
-  width: 100%;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 th, td {
-  text-align: left;
-  padding: 10px;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
 }
 
 th {
-  background-color: #f2f2f2;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+    background-color: #f8f8f8;
 }
 
 tr:hover {
-  background-color: #ddd;
+    background-color: #f1f1f1;
 }
 
-input[type="checkbox"] {
-  margin-right: 8px;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-select {
-  width: 100%;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  appearance: none;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center/14px;
-}
-
-select:focus {
-  outline: none;
-  border: 1px solid dodgerblue;
-  box-shadow: 0 0 3px dodgerblue;
+input[type="text"], select, button {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 16px;
 }
 
 button {
-  margin: 20px 0;
-  padding: 8px 16px;
-  background-color: dodgerblue;
-  color: white;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 20px;
 }
 
 button:hover {
-  background-color: #0073e6;
+    background-color: #45a049;
 }
 
-button:active {
-  background-color: #0059b3;
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
-.blocked-row {
-  cursor: not-allowed;
-  background-color: #f8f8f8;
-  opacity: 0.6;
-  pointer-events: none;
-}
-button[disabled] {
-  cursor: not-allowed;
-  opacity: 0.5;
+/* Responsive table styling */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin: 0 0 20px 0;
+    }
+
+    td {
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+    }
 }

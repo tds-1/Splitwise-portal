@@ -6,6 +6,7 @@ import config from "../config";
 import { useNavigate } from "react-router-dom";
 import LogoutConfirmationModal from "./LogoutConfirmationModal";
 import { Link } from "react-router-dom";
+import Header from './Header'; // Adjust the path based on your project structure
 
 const UserInfo = () => {
   const [user, setUser] = useState(null);
@@ -43,6 +44,7 @@ const UserInfo = () => {
   }
 
   return (
+    <>    <Header />
     <div className="UserInfo">
       <h1>User Information</h1>
       <img
@@ -69,6 +71,7 @@ const UserInfo = () => {
         onConfirm={handleConfirmLogout}
       />{" "}
     </div>
+    </>
   );
 };
 

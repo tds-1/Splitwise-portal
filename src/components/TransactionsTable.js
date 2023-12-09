@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Select, { components } from "react-select";
 import "./TransactionsTable.css";
 import api from "../api";
 import config from "../config";
 import Checkbox from "@mui/material/Checkbox";
-import { useNavigate } from "react-router-dom";
 import BulkExpenseResultTable from "./BulkExpenseResultTable";
 
 const CheckboxOption = (props) => {
@@ -130,6 +128,7 @@ function TransactionsTable({
                 <th>Select</th>
                 <th>Amount</th>
                 <th>Time</th>
+                <th>Remarks</th>
                 <th>Description</th>
                 <th>Group</th>
                 <th>Users</th>
@@ -159,6 +158,7 @@ function TransactionsTable({
                     </td>
                     <td>{transaction.transaction_amount}</td>
                     <td>{transaction.bank_transaction_time}</td>
+                    <td>{transaction.remark}</td>
                     <td>
                       <input
                         type="text"

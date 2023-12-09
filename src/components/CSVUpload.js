@@ -112,6 +112,8 @@ const CSVUpload = () => {
 
     <form className="csv-upload-container" onSubmit={handleSubmit}>
       <h1 className="csv-upload-heading">CSV Upload</h1>
+      <h5>Only paytm bank csv accepted w/o meta data</h5>
+      <br></br>
       <div className="csv-upload-input">
         <label htmlFor="csv-file-input">Choose a CSV file: </label>
         <input
